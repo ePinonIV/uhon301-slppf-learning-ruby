@@ -4,7 +4,7 @@
 
 # define class vehicle using 'class' keyword
 
-class MYCLASS
+class MyClass
 
     # define method using 'def' keyword
     def class_print
@@ -17,6 +17,6 @@ class MYCLASS
 end
 
 # create object
-obj = MYCLASS.new
+obj = MyClass.new
 
 obj.class_print
