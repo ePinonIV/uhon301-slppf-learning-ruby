@@ -10,5 +10,8 @@ b = 2
 # interprets a + b and prints output
 puts(a + b)
 
+# print blank line in between
+puts()
+
 # interprets a(b) so the value is printed
 puts(a b)
