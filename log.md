@@ -26,7 +26,7 @@
 
 04/17/26
 
-- thought I should focus more on some reading and listening today since I'd done mostly writing so far
+- thought I should switch to some reading and listening today since I'd done mostly writing so far
 - Did some good reading on [Ruby as compared to Python](www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-python/) (a language I already know pretty well) and I think it helps to put this one more in perspective
     - similarities:
         - has interactive prompt
@@ -48,3 +48,9 @@
         - require instead of import
         - more shortcuts available
 - also interestingly I found a podcast about [Ruby as beautiful programming language](https://www.youtube.com/watch?v=CgfuEMvYeX0) so I listened to that!
+
+-----
+
+04/18/26
+- found a very [extensive tutorial](https://www.youtube.com/watch?v=t_ispmWmdjY) on learning Ruby, seems like a very helpful resource
+    - I watched through the first few sections to reinforce what I learned previously, then wrote some new code after section 10 (getting user input)
