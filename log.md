@@ -54,3 +54,11 @@
 04/18/26
 - found a very [extensive tutorial](https://www.youtube.com/watch?v=t_ispmWmdjY) on learning Ruby, seems like a very helpful resource
     - I watched through the first few sections to reinforce what I learned previously, then wrote some new code after section 10 (getting user input)
+
+-----
+
+04/19/26
+
+- for the 'immersive' experience today, I should put in a little extra work and I happened to find [this tutorial](https://www.youtube.com/watch?v=NNquTeeA2as) on how to make some graphics with Ruby so I decided to follow it
+- made a cool little demo showcasing what you can do with the language!
+- I'll try to add more documentation about it tomorrow
