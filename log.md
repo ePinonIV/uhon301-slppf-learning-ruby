@@ -48,6 +48,10 @@
         - require instead of import
         - more shortcuts available
 - also interestingly I found a podcast about [Ruby as beautiful programming language](https://www.youtube.com/watch?v=CgfuEMvYeX0) so I listened to that!
+    - they had some very strong opinions about the language, mostly positive, and they talked a bit about the history of the language and why it was made...
+    - most interestingly they talked about writing code similar to writing a book, or even poetry! They talked about how the syntax of this language is much more elegant and simple to make sense of than others (which I definitely agree)
+    - one of the people said that they loathed writing code in ohter languages because of the syntax, but they enjoy Ruby a lot, and I think it is interesting because many people think of writing code just as something to do for a job, but it is a hobby for many, just like writing
+    - they briefly talked about how Ruby lets people modify the base classes and how it is like an author publishing a book and some fan writing another chapter - people's work builds on each other and makes something even greater
 
 -----
 
@@ -62,3 +66,13 @@
 - for the 'immersive' experience today, I should put in a little extra work and I happened to find [this tutorial](https://www.youtube.com/watch?v=NNquTeeA2as) on how to make some graphics with Ruby so I decided to follow it
 - made a cool little demo showcasing what you can do with the language!
 - I'll try to add more documentation about it tomorrow
+
+-----
+
+04/20/26
+
+- today I should try to decide on the actual project I am going to make, now that I have an understanding of the language better
+- here are my current ideas:
+    - wordle or similar word based game with a database (with proper gui)
+        - could be a version of a board game (scrabble, tapple, anomia, etc.)
+    - pong, flappy bird, asteroids or some other simple input graphic game

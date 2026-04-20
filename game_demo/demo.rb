@@ -1,27 +1,21 @@
 # simple game capability demonstration using the Ruby2d library
+# - this is just to demonstrate basic graphical capabilities
+# - creates background and basic shape, as well as moveable sprite/image
 
 require 'ruby2d'
 
 set width: 600, height: 273, title: "Space Game Demo"
-#set height: 273
 
 Image.new('space_background.png')
 
+# how to make basic shapes
 =begin
 square = Square.new(
     color: 'red',
     size: 80,
     x: 100, y: 100,
 )
-=end
 
-Circle.new(
-    color: 'yellow',
-    radius: 60,
-    x: 20, y: 20,
-)
-
-=begin
 Triangle.new(
     color: 'orange',
     x1: 0, y1: 0,
@@ -37,6 +31,15 @@ Sprite.new(
 )
 =end
 
+Circle.new(
+    color: 'yellow',
+    radius: 60,
+    x: 20, y: 20,
+)
+
+
+# this is the sprite/image that the user will control
+# NOTE: there is an actual Sprite object, but it is only needed when the image has animations
 ufo_img = Image.new(
     'ufo.png',
     x: 250,
@@ -50,6 +53,7 @@ ufo_sound = Sound.new('ufo_fly.ogg')
 music = Music.new("background_noise.ogg", loop:true)
 music.play
 
+# just to display static text on screen
 Text.new(
     'Use the arrow keys to move!',
     x: 120,
@@ -72,9 +76,16 @@ on :key_held do |event|
     end
 end
 
+start_time = Time.now
 # activates only when key is initially pressed
+# - timer so it doesn't get spammed
 on :key_down do
-    ufo_sound.play
+    elapsed = Time.now - start_time
+    if elapsed > 0.25
+        ufo_sound.play
+        start_time = Time.now
+    end
 end
+
 # start the visual display window
 show
