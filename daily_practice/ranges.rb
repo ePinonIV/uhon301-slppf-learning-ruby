@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/ruby3.0
 
 =begin
 Ruby program to demonstrate ranges; can be one of these types:
