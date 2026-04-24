@@ -26,3 +26,7 @@ Then use RubyGems, Ruby's internal libarary installer and manager, to install Ru
 Since Ruby is an interpreted language, instead of a compiled one, you can simply run any Ruby program (with or without the Ruby2d library) like so:
 
 `ruby <program_name>.rb`
+
+# Game Demo(s)
+
+Hopefully proper Windows executables will be added later to easily run these demos...
