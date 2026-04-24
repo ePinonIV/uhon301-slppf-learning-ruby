@@ -104,5 +104,19 @@
         - [ruby install for Windows](https://rubyinstaller.org/downloads/)
         - [getting exe in Windows](https://www.ruby-forum.com/t/distributing-ruby-program-as-a-standalone-executable-exe-for-windows/210581)
 
+-----
+
+04/23/26
+- I think I have decided on the River Of Doubt Choose Your Own Adventure Game (RODCYOA?). Since this is kind of a big project I think its in my best interest to plan out a little before blindly jumping in to code...
+- Going to do a little refreshing on the ROD story.
+- As for the story, I think 8 checkpoints/stages for the user to choose seems like a good number, here are my ideas:
+1. Packing for journey - Father Zahm invites TR (the player?) on the trip to the Amazon. Do you go or not? If so, do you help him pack or leave it all to him?
+2. Now in the jungle, do you take canoes down the water or walk through on feet? (Maybe implement some kind of resource/danger? So it canoes, chance to get hurt or smth, but if on feet lose hunger)
+3. First encounter with Cinta Larga tribe. Do you leave a peace offering, try to fight them, or just move on? (Lose food/items, get hurt, or __)
+4. Simplicio taken by a whirlpool! Do you stop and take the time to look for him or cut your losses and move on? (Stopping costs more food, raises group morale, moving on lowers morale but saves food)
+5. Nature is being really rough, you are being eaten by the flies and termites. Use medical resources or save them? (If not used, can develop infection?)
+6. TR and Rondon are in conflict over how to handle rest of expedition. Do you push onwards quickly, forgoing the scentifical/geographical analysis you set out to do? Or, do you linger around to do this work in the harsh environment? (Save food & health, or lose food/health but get research done... maybe have something about relationship with Rondon being bad?)
+7. TR is severely ill on the last stretch out of the jungle, and is suggesting to go on ahead without him. Do you leave his legacy to end there in the jungle, or drag him out? (Save food & resources but lose TR, lose food/resources but save him!)
+8. The group makes it out of the jungle! However there are many people who don't believe your tall tales of your time in the Amazon. Did you collect enough specimens as proof of your journey? (Check if spent enough time researching, different endings based on results)
 
     
