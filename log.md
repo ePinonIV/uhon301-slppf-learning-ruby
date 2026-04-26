@@ -107,6 +107,7 @@
 -----
 
 04/23/26
+
 - I think I have decided on the River Of Doubt Choose Your Own Adventure Game (RODCYOA?). Since this is kind of a big project I think its in my best interest to plan out a little before blindly jumping in to code...
 - Going to do a little refreshing on the ROD story.
 - As for the story, I think 8 checkpoints/stages for the user to choose seems like a good number, here are my ideas:
@@ -120,3 +121,15 @@
 8. The group makes it out of the jungle! However there are many people who don't believe your tall tales of your time in the Amazon. Did you collect enough specimens as proof of your journey? (Check if spent enough time researching, different endings based on results)
 
     
+-----
+
+04/24/26
+
+- began making game, got the basic structure set up and ready to add more stuff now
+
+-----
+
+04/25/26
+
+- added important class to handle the states of the game
+- added first transition to stage, have to figure out the text and everything though, my immersive thing is tomorrow so I'll get a lot more time in then...

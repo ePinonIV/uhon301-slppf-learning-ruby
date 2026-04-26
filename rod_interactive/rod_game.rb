@@ -9,7 +9,7 @@ Image.new('rod_cover.jpg')
 
 # just to display static text on screen
 Text.new(
-    'Click anywhere',
+    'Press enter',
     x: 10,
     y: 10,
     size: 30,
@@ -24,11 +24,46 @@ Text.new(
 )
 
 
-# Global variables
-GameState = 0       # sets stage of game 
-Health = 100
-Morale = 100
-Hunger = 0
+
+# Global variables -> changed to GameState class variables
+
+class GameState
+    @stage = 0
+    @health = 100
+    @morale = 100
+    @hunger = 1
+    @research = 0
+
+    class << self
+        attr_accessor :stage
+        attr_accessor :health
+        attr_accessor :morale
+        attr_accessor :hunger
+        attr_accessor :research
+    end
+
+    def change_stage 
+        if self.class.health <= 0
+            self.class.stage = -1
+        elsif self.class.morale <= 0
+            self.class.stage = -2
+        elsif self.class.hunger <= 0
+            self.class.stage = -3
+        else
+            self.class.stage += 1
+        end
+    end
+
+    def display_state
+        if self.class.stage == 0
+            puts "placeholder"
+        elsif self.class.stage == 1
+            Image.new('loading_boat.jpg')
+        end
+    end
+
+end
+
 
 
 # ---------------------------------------------------------
@@ -42,10 +77,15 @@ General structure of code:
     - then based on current game state & button clicked, do certain action
     - update statuses as needed
 =end
+myGame = GameState.new
 
+on :key_down do |event|
+    if event.key == 'return'
+        myGame.change_stage
+        myGame.display_state
 
-
-
+    end
+end
 
 # ---------------------------------------------------------
 
