@@ -133,3 +133,10 @@
 
 - added important class to handle the states of the game
 - added first transition to stage, have to figure out the text and everything though, my immersive thing is tomorrow so I'll get a lot more time in then...
+
+-----
+
+04/26/26
+
+- delaying immersive thing until Monday since I was busy with other stuff today
+- watched some more of the big video and listened to some stuff about ruby today from that same creator as previously mentioned!
