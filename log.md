@@ -140,3 +140,9 @@
 
 - delaying immersive thing until Monday since I was busy with other stuff today
 - watched some more of the big video and listened to some stuff about ruby today from that same creator as previously mentioned!
+
+-----
+
+04/27/26
+
+- made a good bit more progress on my code today (mostly look at notes within file)
