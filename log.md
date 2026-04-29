@@ -146,3 +146,11 @@
 04/27/26
 
 - made a good bit more progress on my code today (mostly look at notes within file)
+
+-----
+
+04/28/26
+
+- had to rework some stuff in the gamestate class, still working out how to display stuff nicely
+- switched to mouse click buttons that way there's only one input I need to check for
+- once I do get this logic figure out it should be rinse and repeat to add the rest of the stages

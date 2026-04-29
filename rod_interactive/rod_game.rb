@@ -48,13 +48,13 @@ class GameState
 
     STAGES = {
         0 => {
-            text: "THE RIVER OF DOUBT CYOA\nPress enter to start!"
-            bg: 'rod_cover.jpg'
+            text: "THE RIVER OF DOUBT CYOA\nPress enter to start!",
+            bg: 'rod_cover.jpg',
             options: [ {label: "Start Game", action: 'start'} ]
         },
         1 => {
-            text: "STAGE 1: Prepping for the trip.\nYou have just lost the reelection and you want to get away.\nYour old friend Father Zahm has asked again about going on a trip to the Amazon rainforest. Thinking it will be a good way to run from the darkness, you accept.\nZahm is offering to make all the preparations himself.\nDo you help him or leave it up to him?"
-            bg: 'loading_boat.jpg'
+            text: "STAGE 1: Prepping for the trip.\nYou have just lost the reelection and you want to get away.\nYour old friend Father Zahm has asked again about going on a trip to the Amazon rainforest. Thinking it will be a good way to run from the darkness, you accept.\nZahm is offering to make all the preparations himself.\nDo you help him or leave it up to him?",
+            bg: 'loading_boat.jpg',
             options: [ 
                 { label: "Help him pack.", action: 'help' },
                 { label: "Let Zahm do the work.", action: 'no_help' }
@@ -64,8 +64,8 @@ class GameState
     }
 
     def self.update_display
-        @current.objs.each(&:remove)
-        @current.objs.clickable_areas
+        @current_objs.each(&:remove)
+        @current_objs.clear
         @clickable_areas.clear
 
         data = STAGES[@stage]
@@ -75,7 +75,7 @@ class GameState
         @current_objs << Image.new(data[:bg]) if data[:bg]
 
         # text
-        @current_objs << Text.new(data[:text], x: 20, y: 20, size: 25, color: 'white', z = 10)
+        @current_objs << Text.new(data[:text], x: 20, y: 20, size: 25, color: 'white', z: 10)
 
         # draw buttons (btn) and save boundaries
         if data[:options]
@@ -108,9 +108,47 @@ class GameState
             end
         end
 
+        # still in fn
+        # put hud w/resources info
+        hud_text = "Health: #{@health} | Morale: #{@morale} | Hunger: #{@hunger} | Research: #{@reseach}"
+        @current_objs << Text.new(hud_text, x: 20, y: 550, size: 15, color: 'lime', z: 10)
+    end
 
+    def self.next_stage
+        @stage += 1
+        update_display
+    end
+
+    def self.handle_choice(action)
+        if @stage == 0 && action == 'start'
+            next_stage
+        elsif @stage == 1
+            if action == 'help'
+                @hunger -= 40
+                puts "Helped Father Zahm pack and brought more practical food resources"
+            elsif action == 'no_help'
+                puts "Let Father Zahm do all the work... he didn't know what he was getting himself into"
+            end
+            next_stage
+        end
+        ######
+    end
+            
+    def self.handle_click(mouse_x, mouse_y)
+        @clickable_areas.each do |area|
+            # check if mouse is w/in rectangle's bounds
+            if mouse_x >= area[:x] && mouse_x <= (area[:x] + area[:width]) &&
+                mouse_y >= area[:y] && mouse_y <= (area[:y] + area[:height])
+
+                handle_choice(area[:action])
+                break
+            end
+        end
+    end
 
 end
+
+#GameState.update_display
 
 
 
@@ -127,6 +165,11 @@ General structure of code:
 =end
 myGame = GameState.new
 
+#myGame.update_display
+
+GameState.update_display
+
+=begin
 on :key_down do |event|
     if event.key == 'return'
         myGame.change_stage
@@ -134,6 +177,7 @@ on :key_down do |event|
 
     end
 end
+=end
 
 on :mouse_down do |event|
     if event.button == :left
