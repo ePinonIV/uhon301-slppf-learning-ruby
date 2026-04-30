@@ -2,7 +2,7 @@
 
 require 'ruby2d'
 
-set width: 648, height: 589, title: "River of Doubt Interactive Game"
+set width: 580, height: 580, title: "River of Doubt Interactive Game"
 
 Image.new('rod_cover.jpg')
 

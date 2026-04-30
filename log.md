@@ -126,6 +126,7 @@
 04/24/26
 
 - began making game, got the basic structure set up and ready to add more stuff now
+- most of my progress now will come in the form of actually working on the code project, so this log will likely be less full...
 
 -----
 
@@ -154,3 +155,9 @@
 - had to rework some stuff in the gamestate class, still working out how to display stuff nicely
 - switched to mouse click buttons that way there's only one input I need to check for
 - once I do get this logic figure out it should be rinse and repeat to add the rest of the stages
+
+-----
+
+04/29/26
+
+- 
