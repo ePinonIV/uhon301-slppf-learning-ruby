@@ -160,4 +160,12 @@
 
 04/29/26
 
-- 
+- not sure where I got the numbering from, this should be day 16...
+- worked on game states to add new stuff
+
+-----
+
+04/30/26
+
+- and this is day 17 - maybe I should have been putting the day in the title, oops!
+- added more to game states!

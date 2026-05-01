@@ -7,24 +7,6 @@ set width: 580, height: 580, title: "River of Doubt Interactive Game"
 Image.new('rod_cover.jpg')
 
 
-# just to display static text on screen
-=begin
-Text.new(
-    'Press enter',
-    x: 10,
-    y: 10,
-    size: 30,
-    color: 'black',
-)
-Text.new(
-    'to start!',
-    x: 10,
-    y: 35,
-    size: 30,
-    color: 'black',
-)
-=end
-
 # Global variables -> changed to GameState class variables
 
 class GameState
@@ -58,6 +40,23 @@ class GameState
             options: [ 
                 { label: "Help him pack.", action: 'help' },
                 { label: "Let Zahm do the work.", action: 'no_help' }
+            ]
+        }
+        2 => {
+            text: "STAGE 2: In the Jungle.\nAs the rushing water roars next to you, your group debates how to proceed, as it is taking longer than you thought to make it to your first landmark.",
+            bg: 'jungle_1.jpg',
+            options: [
+                { label: "Ride the canoes down the river.", action: 'canoe' },
+                { label: "Walk beside the river by foot.", action: 'walk' }
+            ]
+        }
+        3 => {
+            text: "STAGE 3",
+            bg: 'tribe.jpg',
+            options: [
+                { label: "Leave a peace offering.", action: 'peace' },
+                { label: "Try to fight them.", action: 'fight' },
+                { label: "Hurry away.", action: 'leave' }
             ]
         }
 
