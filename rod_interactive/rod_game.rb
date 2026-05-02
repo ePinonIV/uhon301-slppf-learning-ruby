@@ -20,6 +20,7 @@ class GameState
 
     class << self
         attr_accessor :stage
+        attr_accessor :next_target_stage
         attr_accessor :health
         attr_accessor :morale
         attr_accessor :hunger
@@ -51,7 +52,7 @@ class GameState
             ]
         }
         3 => {
-            text: "STAGE 3",
+            text: "STAGE 3: Cinta Larga Tribe Encounter.",
             bg: 'tribe.jpg',
             options: [
                 { label: "Leave a peace offering.", action: 'peace' },
@@ -67,43 +68,52 @@ class GameState
         @current_objs.clear
         @clickable_areas.clear
 
-        data = STAGES[@stage]
-        return unless data
+        if @stage == 99
+            @current_objs << Image.new('transition_bg.png')     # NEED to add
+            wrapped_text = wrap_text(@transition_text, 45)
+            @current_objs << Text.new(wrapped_text, x: 40, y: 50, size: 22, color: 'white', z: 10)
 
-        # background
-        @current_objs << Image.new(data[:bg]) if data[:bg]
+            draw_button(450, "Continue Adventure", 'finish_transition')
 
-        # text
-        @current_objs << Text.new(data[:text], x: 20, y: 20, size: 25, color: 'white', z: 10)
+        else
+            data = STAGES[@stage]
+            return unless data
 
-        # draw buttons (btn) and save boundaries
-        if data[:options]
-            data[:options].each_with_index do |opt, i|
-                btn_x = 20
-                btn_y = 350 + (i * 60)
-                btn_width = 250
-                btn_height = 45
+            # background
+            @current_objs << Image.new(data[:bg]) if data[:bg]
 
-                # rectangle for btn
-                @current_objs << Rectangle.new(
-                    x: btn_x, y: btn_y,
-                    width: btn_width, height: btn_height,
-                    color: 'blue', z: 10
-                )
+            # text
+            @current_objs << Text.new(data[:text], x: 20, y: 20, size: 25, color: 'white', z: 10)
 
-                # text to go in btn
-                @current_objs << Text.new(
-                    opt[:label],
-                    x: btn_x + 15, y: btn_y + 10,
-                    size: 20, color: 'white', z: 11
-                )
+            # draw buttons (btn) and save boundaries
+            if data[:options]
+                data[:options].each_with_index do |opt, i|
+                    btn_x = 20
+                    btn_y = 350 + (i * 60)
+                    btn_width = 250
+                    btn_height = 45
 
-                # boundaries so we can click with mouse
-                @clickable_areas << {
-                    x: btn_x, y: btn_y,
-                    width: btn_width, height: btn_height,
-                    action: opt[:action]
-                }
+                    # rectangle for btn
+                    @current_objs << Rectangle.new(
+                        x: btn_x, y: btn_y,
+                        width: btn_width, height: btn_height,
+                        color: 'blue', z: 10
+                    )
+
+                    # text to go in btn
+                    @current_objs << Text.new(
+                        opt[:label],
+                        x: btn_x + 15, y: btn_y + 10,
+                        size: 20, color: 'white', z: 11
+                    )
+
+                    # boundaries so we can click with mouse
+                    @clickable_areas << {
+                        x: btn_x, y: btn_y,
+                        width: btn_width, height: btn_height,
+                        action: opt[:action]
+                    }
+                end
             end
         end
 
@@ -144,6 +154,25 @@ class GameState
             end
         end
     end
+
+    def self.show_transition(text, target)
+        @transition_text = text
+        @next_target_stage = target
+        @stage = 99
+        update_display
+    end
+
+    def self.draw_button(y, label, action)
+        btn_x = 20
+        @current_objs << Rectangle.new(x: btn_x, y: y, width: 300, height: 45, color: 'blue', z: 10)
+        @current_objs << Text.new(label, x: btn_x, y: y + 10, size: 20, color: 'white', z: 11)
+        @clickable_areas << {x: btn_x, y: y, width: 300, height: 45, action: action}
+    end
+
+    # ok had to use AI to figure this one out, apparently word wrapping is not human readable code...
+    def self.wrap_text(text, max_width = 50)
+        text.gsub(/(.{1,#{max_width}})(\s+|\Z)/, "\\1\n")
+end
 
 end
 
