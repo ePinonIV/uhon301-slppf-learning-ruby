@@ -174,4 +174,10 @@
 
 05/01/26
 
-- 
+- worked on formatting images better and trying to work out kinks with stages (and added transition stage)
+
+-----
+
+05/02/26
+
+- added setup for more stages, really need to fill those in and clean up the product tomorrow since we're getting near the end...

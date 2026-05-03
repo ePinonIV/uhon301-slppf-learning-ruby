@@ -31,18 +31,18 @@ class GameState
 
     STAGES = {
         0 => {
-            text: "THE RIVER OF DOUBT CYOA\nPress enter to start!",
+            text: "THE RIVER OF DOUBT CYOA Press enter to start!",
             bg: 'rod_cover.jpg',
             options: [ {label: "Start Game", action: 'start'} ]
         },
         1 => {
-            text: "STAGE 1: Prepping for the trip.\nYou have just lost the reelection and you want to get away.\nYour old friend Father Zahm has asked again about going on a trip to the Amazon rainforest. Thinking it will be a good way to run from the darkness, you accept.\nZahm is offering to make all the preparations himself.\nDo you help him or leave it up to him?",
+            text: "STAGE 1: Prepping for the trip. You have just lost the reelection and you want to get away.\nYour old friend Father Zahm has asked again about going on a trip to the Amazon rainforest. Thinking it will be a good way to run from the darkness, you accept.\nZahm is offering to make all the preparations himself.\nDo you help him or leave it up to him?",
             bg: 'loading_boat.jpg',
             options: [ 
                 { label: "Help him pack.", action: 'help' },
                 { label: "Let Zahm do the work.", action: 'no_help' }
             ]
-        }
+        },
         2 => {
             text: "STAGE 2: In the Jungle.\nAs the rushing water roars next to you, your group debates how to proceed, as it is taking longer than you thought to make it to your first landmark.",
             bg: 'jungle_1.jpg',
@@ -50,7 +50,7 @@ class GameState
                 { label: "Ride the canoes down the river.", action: 'canoe' },
                 { label: "Walk beside the river by foot.", action: 'walk' }
             ]
-        }
+        },
         3 => {
             text: "STAGE 3: Cinta Larga Tribe Encounter.",
             bg: 'tribe.jpg',
@@ -58,6 +58,40 @@ class GameState
                 { label: "Leave a peace offering.", action: 'peace' },
                 { label: "Try to fight them.", action: 'fight' },
                 { label: "Hurry away.", action: 'leave' }
+            ]
+        },
+        4 => {
+            text: "STAGE 4: Simplicio taken by whirlpool.",
+            bg: 'whirlpool.jpg',
+            options: [
+            ]
+        },
+        5 => {
+            text: "STAGE 5: Injured during the trip, you have an infection!",
+            bg: 'medicine.jpg',
+            options: [
+
+            ]
+        },
+        6 => {
+            text: "STAGE 6: Roosevelt and Rondon are in conflict on how to proceed.",
+            bg: 'conflict.jpg',
+            options: [
+
+            ]
+        },
+        7 => {
+            text: "STAGE 7: Roosevelt very ill on final stretch.",
+            bg: 'stretcher.jpg',
+            options: [
+
+            ]
+        },
+        8 => {
+            text: "STAGE 8: Made it out of the jungle!",
+            bg: 'escaped.jpg',
+            options: [
+
             ]
         }
 
