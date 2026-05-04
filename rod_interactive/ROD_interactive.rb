@@ -16,6 +16,7 @@ class GameState
     @resources = 50
     @research = 0
     @pres_down = 0
+    @status_check = 0
     @current_objs = []
     @clickable_areas = []
 
@@ -28,6 +29,7 @@ class GameState
         attr_accessor :resources
         attr_accessor :research
         attr_accessor :pres_down
+        attr_accessor :status_check
         attr_accessor :current_objs
         attr_accessor :clickable_areas
     end
@@ -85,7 +87,7 @@ class GameState
             text: "STAGE 6: Now at the River of Doubt, Roosevelt and Rondon are in conflict on how to proceed. Roosevelt thinks the journey has been too treacherous and the people's safety is the priority, so they should keep moving. However Rondon wants to use this once in a lifetime opportunity to survey the river and get valuable information.\nShould they stop and survey the river or prioritize survival?",
             bg: 'conflict2.jpg',
             options: [
-                { label: "SLow down and conduct research", action: 's6_research' },
+                { label: "Slow down and conduct research", action: 's6_research' },
                 { label: "Keep the pace and prioritize survival", action: 's6_survival' }
             ]
         },
@@ -121,7 +123,7 @@ class GameState
             ]
         },
         -3 => {
-            text: "The terrain proved too rough and the group used up all thier rations, leaving them to starve out in the jungle...",
+            text: "The environment proved too tough and the group couldn't manage their resources, leaving them to starve out in the jungle...",
             bg: 'game_over.jpg',
             options: [
                 { label: "Try Again", action: 'restart' },
@@ -137,7 +139,7 @@ class GameState
             ]
         },
         10 => {
-            text: "The group made it out alive! There are people who are in disbelief about your journey, as it sounds crazy on paper. However, since you were able to conduct some research and collect specimens, people can see the physical proof of your expedition!...\nAchievement: Canon Ending",
+            text: "The group made it out alive! There are people who are in disbelief about the journey, as it sounds crazy on paper. However, since they were able to conduct some research and collect specimens, people can see the physical proof of the expedition!...\nAchievement: Canon Ending",
             bg: 'escaped_good.jpg',
             options: [
                 { label: "Return to title", action: 'restart' },
@@ -203,10 +205,10 @@ class GameState
                 @current_objs << Text.new(line, x: 1100, y: start_y, size: 25, color: 'white', z: 10)
                 start_y += 30
             end
-            draw_button(1100, 400, "  Eat some rations (Hunger +10, Resources -10)", 'eat')
-            draw_button(1100, 470, "  Use some medicine (Health +10, Resources -10)", 'heal')
-            draw_button(1100, 540, "  Spend some time telling stories (Morale +10, Hunger -10)", 'socialize')
-            draw_button(1100, 610, "  Spend time surveying the area (Research +10, Resources -10)", 'research')
+            draw_button(1100, 400, "  Eat some rations                                  (Hunger +10, Resources -10)", 'eat')
+            draw_button(1100, 470, "  Use some medicine                              (Health +10, Resources -10)", 'heal')
+            draw_button(1100, 540, "  Spend some time telling stories          (Morale +10, Hunger -10)", 'socialize')
+            draw_button(1100, 610, "  Spend time surveying the area           (Research +10, Resources -10)", 'research')
             draw_button(1100, 680, "  → Continue adventure", 'endgame')
 
         else
@@ -309,7 +311,7 @@ class GameState
             show_transition("Banding together to look for Simplicio took some time, but strengthened the bonds of the group. Although Simplicio was never found, everyone was reassured that the rest of the team had their back in an emergency.\n\nMorale +30\nHunger -20", 5)
         when 's4_move'
             @morale -= 60
-            show_transition("Deciding it wasn't worth their time and resources, the group moved on. Shaken up by the loss of a good man and the willingness of the group to leave people behind took a toll on everyone's spirits.\nMorale -20", 5)
+            show_transition("Deciding it wasn't worth their time and resources, the group moved on. Shaken up by the loss of a good man and the willingness of the group to leave people behind took a toll on everyone's spirits.\nMorale -60", 5)
             
         when 's5_medicine'
             @resources -= 40
@@ -341,23 +343,38 @@ class GameState
                 @hunger += 10
                 @resources -= 10
             end
+            if @status_check == 0
+                @current_objs << Text.new("Statuses will be updated on next stage", x: 1120, y: 990, size: 22, color: 'lime', z: 10)
+                @status_check == 1
+            end
 
         when 'heal'
             if @health < 100 && @resources > 0
                 @health += 10
                 @resources -= 20
             end
+            if @status_check == 0
+                @current_objs << Text.new("Statuses will be updated on next stage", x: 1120, y: 990, size: 22, color: 'lime', z: 10)
+                @status_check == 1
+            end
 
         when 'socialize'
-            if @resources > 0
+            if @hunger > 0 && @morale < 100
                 @morale += 20
                 @hunger -= 10
-                @resources -= 10
+            end
+            if @status_check == 0
+                @current_objs << Text.new("Statuses will be updated on next stage", x: 1120, y: 990, size: 22, color: 'lime', z: 10)
+                @status_check == 1
             end
 
         when 'research'
             @hunger -= 10
             @research += 10
+            if @status_check == 0
+                @current_objs << Text.new("Statuses will be updated on next stage", x: 1120, y: 990, size: 22, color: 'lime', z: 10)
+                @status_check == 1
+            end
 
         when 'endgame'
             if @next_target_stage == 8
@@ -378,7 +395,7 @@ class GameState
             update_display
 
         when 'quit'
-            exit
+            Window.close
         end
     end
             
@@ -396,6 +413,7 @@ class GameState
 
     def self.show_transition(text, target)
         @hunger -= 10
+        @status_check = 0
         if @resources < 0
             @resources = 0
         end

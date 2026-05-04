@@ -1,5 +1,5 @@
 # Simple Ruby Tutorials and Game Demonstration
-### uhon301-slppf-learning-ruby
+### uhon401-slppf-learning-ruby
 
 This repository will hold all of the daily practice and work I do in my effor to learn a new programming language over the course of 21 days. Details on how to install Ruby can be found below.
 
@@ -29,4 +29,4 @@ Since Ruby is an interpreted language, instead of a compiled one, you can simply
 
 # Game Demo(s)
 
-Hopefully proper Windows executables will be added later to easily run these demos...
+Download files in the rod_export folder (including the images folder with the .jpg's). Then simply double click on the executable `ROD_interactive.exe` to play the game!
