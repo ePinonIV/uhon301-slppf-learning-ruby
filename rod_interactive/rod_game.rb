@@ -2,10 +2,9 @@
 
 require 'ruby2d'
 
-set width: 580, height: 580, title: "River of Doubt Interactive Game"
+set width: 600, height: 600, title: "River of Doubt Interactive Game"
 
 Image.new('rod_cover.jpg')
-
 
 # Global variables -> changed to GameState class variables
 
@@ -31,46 +30,47 @@ class GameState
 
     STAGES = {
         0 => {
-            text: "THE RIVER OF DOUBT CYOA Press enter to start!",
-            bg: 'rod_cover.jpg',
-            options: [ {label: "Start Game", action: 'start'} ]
+            text: "THE RIVER OF DOUBT CHOOSE YOUR OWN ADVENTURE You will assume the role of Teddy Roosevelt on his journey through the River of Doubt and see if you can do better than he did!",
+            bg: 'rod_cover2.jpg',
+            options: [ {label: "Start Game", action: 's0_start'} ]
         },
         1 => {
-            text: "STAGE 1: Prepping for the trip. You have just lost the reelection and you want to get away.\nYour old friend Father Zahm has asked again about going on a trip to the Amazon rainforest. Thinking it will be a good way to run from the darkness, you accept.\nZahm is offering to make all the preparations himself.\nDo you help him or leave it up to him?",
+            text: "STAGE 1: You have just lost the presidential election and want to get away for a bit. Your old friend Father Zahm has asked again about going on a trip to the Amazon rainforest. Thinking it will be a good way to run from the darkness, you accept.\nZahm is offering to make all the preparations himself.\nDo you help him or leave it up to him?",
             bg: 'loading_boat.jpg',
             options: [ 
-                { label: "Help him pack.", action: 'help' },
-                { label: "Let Zahm do the work.", action: 'no_help' }
+                { label: "Help him pack.", action: 's1_help' },
+                { label: "Let Zahm do the work.", action: 's1_no_help' }
             ]
         },
         2 => {
             text: "STAGE 2: In the Jungle.\nAs the rushing water roars next to you, your group debates how to proceed, as it is taking longer than you thought to make it to your first landmark.",
             bg: 'jungle_1.jpg',
             options: [
-                { label: "Ride the canoes down the river.", action: 'canoe' },
-                { label: "Walk beside the river by foot.", action: 'walk' }
+                { label: "Ride the canoes down the river.", action: 's2_canoe' },
+                { label: "Walk beside the river by foot.", action: 's2_walk' }
             ]
         },
         3 => {
-            text: "STAGE 3: Cinta Larga Tribe Encounter.",
+            text: "STAGE 3: With Rondon's expertise, you encounter signs of the Cinta Large tribe in the jungle. Knowing the dangers they could bring to the group, do you leave a peace offering or increase your pace to leave the area?",
             bg: 'tribe.jpg',
             options: [
-                { label: "Leave a peace offering.", action: 'peace' },
-                { label: "Try to fight them.", action: 'fight' },
-                { label: "Hurry away.", action: 'leave' }
+                { label: "Leave a peace offering.", action: 's3_peace' },
+                { label: "Hurry away quickly.", action: 's3_leave' }
             ]
         },
         4 => {
-            text: "STAGE 4: Simplicio taken by whirlpool.",
+            text: "STAGE 4: Simplicio taken by whirlpool. Do you stop and take the time to look for him? Or do you cut your losses and move on?",
             bg: 'whirlpool.jpg',
             options: [
+                { label: "Look for Simplicio.", action: 's4_look' },
+                { label: "Move on.", action: 's4_move' }
             ]
         },
         5 => {
             text: "STAGE 5: Injured during the trip, you have an infection!",
             bg: 'medicine.jpg',
             options: [
-
+                { label: ""}
             ]
         },
         6 => {
@@ -88,8 +88,8 @@ class GameState
             ]
         },
         8 => {
-            text: "STAGE 8: Made it out of the jungle!",
-            bg: 'escaped.jpg',
+            text: "STAGE 8: Made it out of the jungle alive! However, there are many people who are in disbelief about your journey ",
+            bg: 'escaped_good.jpg',
             options: [
 
             ]
@@ -163,17 +163,21 @@ class GameState
     end
 
     def self.handle_choice(action)
-        if @stage == 0 && action == 'start'
-            next_stage
-        elsif @stage == 1
-            if action == 'help'
-                @hunger -= 40
-                puts "Helped Father Zahm pack and brought more practical food resources"
-            elsif action == 'no_help'
-                puts "Let Father Zahm do all the work... he didn't know what he was getting himself into"
-            end
-            next_stage
+        case action
+        #if @stage == 0 && action == 'start'
+        #    next_stage
+        #elsif @stage == 1
+        when 's1_help'
+            #if action == 'help'
+            @hunger -= 40
+            #puts "Helped Father Zahm pack and brought more practical food resources"
+        when 's1_no_help'
+            #elsif action == 'no_help'
+                #puts "Let Father Zahm do all the work... he didn't know what he was getting himself into"
+            puts "s1_no_help"
+        when 's2_no'
         end
+        next_stage
         ######
     end
             
@@ -213,7 +217,6 @@ end
 #GameState.update_display
 
 
-
 # ---------------------------------------------------------
 
 
@@ -225,21 +228,12 @@ General structure of code:
     - then based on current game state & button clicked, do certain action
     - update statuses as needed
 =end
+
 myGame = GameState.new
 
 #myGame.update_display
 
 GameState.update_display
-
-=begin
-on :key_down do |event|
-    if event.key == 'return'
-        myGame.change_stage
-        myGame.display_state
-
-    end
-end
-=end
 
 on :mouse_down do |event|
     if event.button == :left
@@ -248,9 +242,7 @@ on :mouse_down do |event|
     end
 end
 
-
 # ---------------------------------------------------------
-
 
 # display game
 show
