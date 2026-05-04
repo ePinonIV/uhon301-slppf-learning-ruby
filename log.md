@@ -181,3 +181,16 @@
 05/02/26
 
 - added setup for more stages, really need to fill those in and clean up the product tomorrow since we're getting near the end...
+
+-----
+
+05/03/26
+
+- Made good progres on story sections of game, need some work on the technicalities but I should be able to finish that tomorrow
+
+-----
+
+05/04/26
+
+- Made game fully working!
+- Could use some touch ups here and there on the images and balancing but otherwise its good!

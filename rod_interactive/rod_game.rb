@@ -4,7 +4,7 @@ require 'ruby2d'
 
 set width: 1920, height: 1080, title: "River of Doubt Interactive Game"
 
-Image.new('rod_cover.jpg')
+Image.new('rod_cover2.jpg')
 
 # Global variables -> changed to GameState class variables
 
@@ -146,7 +146,7 @@ class GameState
         },
         11 => {
             text: "You survived the trip, but brought back no proof. Unfortunatly this time, it was the critics who counted, and your legacy was that of an attention-seeking fraud.",
-            bg: 'escaped_bad.jpg',
+            bg: 'escaped_bad2.jpg',
             options: [
                 { label: "Try Again", action: 'restart' },
                 { label: "Quit", action: 'quit' } 
@@ -258,7 +258,7 @@ class GameState
         # still in fn
         # put hud w/resources info
         hud_text = "Health: #{@health} | Morale: #{@morale} | Hunger: #{@hunger} | Resources: #{@resources} | Research: #{@research}"
-        @current_objs << Text.new(hud_text, x: 1090, y: 1020, size: 22, color: 'lime', z: 10)
+        @current_objs << Text.new(hud_text, x: 1120, y: 1020, size: 22, color: 'lime', z: 10)
     end
 
     def self.next_stage
@@ -285,7 +285,7 @@ class GameState
             show_transition("The group takes the canoes down the rough waters, making good time. However, they do suffer some damage and lose a canoe along the way.\n\nMorale -10\nHealth -20\nResources -10", 3)
         when 's2_walk'
             @health -= 10
-            @hunger -= 20
+            @hunger -= 10
             @research += 20
             show_transition("The group decides to be safe and walk. The terrain is gruelling on foot, but they're able to procure some valuable specimens along the way.\n\nHealth -10\nHunger -20\nResearch +20", 3)
         
@@ -314,7 +314,7 @@ class GameState
         
         when 's6_research'
             @morale -= 10
-            @hunger -= 20
+            @hunger -= 10
             @research += 40
             show_transition("Settling their disagreement, Rondon and Roosevelt decide to stop for a while to conduct research They do some analysis of the river, take some astronomical data at night and inspect the wildlife in the jungle. They obtain valuable research at the cost of a couple days' time.\n\nMorale -10\nHunger -20\nResearch +40", 7)
         when 's6_survival'
@@ -420,8 +420,6 @@ end
 # ---------------------------------------------------------
 
 myGame = GameState.new
-
-#myGame.update_display
 
 GameState.update_display
 
