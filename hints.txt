@@ -2,19 +2,194 @@
 
 - Make note of how much of each resources is lost for different options and remember the tradeoffs when having to pick again.
 
+- The game is balanced in that there is one 'right' path to take in every stage, but you can make up for a 'wrong' choice by using resources wisely.
+
 - You lose 10 hunger at the and of each stage no matter what, so make sure to eat if you are around 20 or below hunger.
 
 - Morale is the hardest status to gain back but it is the hardest to lose - it may be a wise option to keep it high.
 
 - You can click the buttons for activities in the transition stage multiple times and they will have more effects (NOTE: multiple clicks will not be visibly displayed, feature not implemented).
 
-- The game is balanced in that there is one 'right' path to take in every stage, but you can make up for a 'wrong' choice by using resources wisely.
-
 - The 'right' choice is not always the 'canon' or story-accurate choice, but rather the one that would make the most sense in a survival situation (in the developer's opinion).
 
 - To get the good ending, you need to have at least 60 research by the end of stage 7 so plan carefully!
 
 - Want to view the recommended path to beat the game? Scroll all the way to the bottom of this document...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,32 +1,13 @@
-# Simple Ruby Tutorials and Game Demonstration
-### uhon401-slppf-learning-ruby
+# How to play game:
 
-This repository will hold all of the daily practice and work I do in my effor to learn a new programming language over the course of 21 days. Details on how to install Ruby can be found below.
+NOTE: The .exe of this game can only be run on a Windows machine. To view the original .rb (ruby) version of the game that can be run via command line, view the 'main' branch.
 
-# Setup
+On this GitHub Page for the 'game_download' branch, click the green 'code' button and choose the bottom option, 'Download ZIP'.
 
-First Ruby must be installed on the target system.
+Once downloaded from the GitHub page, extract all files to a new directory and ensure the `ROD_interactive.exe` file and the `images` folder are in the same directory.
 
-I am using an Ubuntu/Debian based system so use apt:
+Double click the `ROD_interactive.exe` file to play the game! You can either click one of the 'quit' buttons on an end screen, or click the 'x' in the top right corner to close the game.
 
-`sudo apt update`
+The resolution of the game is hard set to 1920x1080. It can be maximized to fit a screen, but not mininized. If it is too large for your screen, you may need to zoom out using Windows settings.
 
-`sudo apt upgrade`
-
-` sudo apt-get install ruby-full`
-
-Additional packages may be required to run Ruby2d, the graphical user interface of Ruby. Install these packages first with apt:
-
-`sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev`
-
-Then use RubyGems, Ruby's internal libarary installer and manager, to install Ruby2d:
-
-`gem install ruby2d`
-
-Since Ruby is an interpreted language, instead of a compiled one, you can simply run any Ruby program (with or without the Ruby2d library) like so:
-
-`ruby <program_name>.rb`
-
-# Game Demo(s)
-
-Download files in the rod_export folder (including the images folder with the .jpg's). Then simply double click on the executable `ROD_interactive.exe` to play the game!
+To get some help playing the game, view the `hints.txt` file downloaded with the rest of the files.
