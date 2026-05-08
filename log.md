@@ -186,11 +186,21 @@
 
 05/03/26
 
-- Made good progres on story sections of game, need some work on the technicalities but I should be able to finish that tomorrow
+- made good progress on story sections of game, need some work on the technicalities but I should be able to finish that tomorrow
 
 -----
 
 05/04/26
 
-- Made game fully working!
-- Could use some touch ups here and there on the images and balancing but otherwise its good!
+- made game fully working!
+- could use some touch ups here and there on the images and balancing but otherwise its good!
+
+-----
+
+05/05/26
+
+- done with project but going some last updates
+- made new branch to make downloading game easier
+- had my parents try out the game and they actually struggled with it a little!
+    - probably in part that they hadn't heard the ROD story so didn't exactly know what was expected
+    - added hints file to help out if someone's stuck
